@@ -1,0 +1,141 @@
+* {
+    font-family: 'Rubik';
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    display: flex;
+    background-color: black;
+}
+
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.twitterLogo>img {
+    height: 80px;
+    width: 80px;
+}
+
+.cardLogin {
+    width: 420px;
+}
+
+.container>.cardLogin>h1 {
+    color: #e7e9ea;
+    margin-top: 20px;
+}
+
+
+.container>.cardLogin>h1 {
+    font-size: 34px;
+    font-weight: 500;
+}
+
+.loginField {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.cardLogin>.loginField>input {
+    background-color: #000;
+    border: 2px solid #131415;
+    height: 50px;
+    outline: none;
+    border-radius: 16px;
+    color: #d1d3d4;
+    padding: 0px 16px;
+    font-size: 16px;
+}
+
+.cardLogin>.loginField>input::placeholder {
+    color: #656a6e;
+}
+
+.cardLogin>.loginField>button {
+    height: 50px;
+    border-radius: 24px;
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: #eff3f4;
+    transition: background-color 0.3s;
+}
+
+.cardLogin button,
+span:hover {
+    cursor: pointer;
+}
+
+.cardLogin button:hover {
+    background-color: #d5d9da;
+}
+
+.cardLogin>p {
+    color: #656a6e;
+    text-align: center;
+    margin-top: 32px;
+}
+
+.cardLogin>p>span {
+    color: #e7e9ea;
+}
+
+.cardLogin span:hover {
+    text-decoration: underline;
+}
+
+#sidebar {
+    background-color: #17202A;
+    height: 100vh;
+    width: 20vw;
+}
+
+#side_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 0px;
+}
+
+#side_items {
+    list-style: none;
+    text-decoration: none;
+    margin-bottom: 24px;
+}
+
+.side-item {
+    margin-bottom: 24px;
+}
+
+.side-item>a {
+    text-decoration: none;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.item-description {
+    font-size: 20px;
+    color: #FFF;
+}
+
+#side_content > #tweet{
+    background-color: #1DA1F2;
+    border: none;
+    color: #FFF;
+    padding: 8px 32px;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 700;
+}
