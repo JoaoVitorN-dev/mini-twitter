@@ -1,3 +1,10 @@
+:root{
+    --color-primary-dark-blue: #17202A;
+    --color-primary-gray: #656a6e;
+    --color-primary-light-white: #e7e9ea;
+    --color-light-blue: #1DA1F2;
+}
+
 * {
     font-family: 'Rubik';
     margin: 0px;
@@ -6,9 +13,7 @@
 
 body {
     display: flex;
-    background-color: black;
 }
-
 
 .container {
     height: 100vh;
@@ -17,6 +22,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-color: #000;
 }
 
 
@@ -30,7 +36,7 @@ body {
 }
 
 .container>.cardLogin>h1 {
-    color: #e7e9ea;
+    color: var(--color-primary-light-white);
     margin-top: 20px;
 }
 
@@ -58,7 +64,7 @@ body {
 }
 
 .cardLogin>.loginField>input::placeholder {
-    color: #656a6e;
+    color: var(--color-primary-gray);
 }
 
 .cardLogin>.loginField>button {
@@ -81,13 +87,13 @@ span:hover {
 }
 
 .cardLogin>p {
-    color: #656a6e;
+    color: var(--color-primary-gray);
     text-align: center;
     margin-top: 32px;
 }
 
 .cardLogin>p>span {
-    color: #e7e9ea;
+    color: var(--color-primary-light-white);
 }
 
 .cardLogin span:hover {
@@ -95,9 +101,9 @@ span:hover {
 }
 
 #sidebar {
-    background-color: #17202A;
+    background-color: var(--color-primary-dark-blue);
     height: 100vh;
-    width: 20vw;
+    flex: 1;
 }
 
 #side_content {
@@ -131,11 +137,28 @@ span:hover {
 }
 
 #side_content > #tweet{
-    background-color: #1DA1F2;
+    background-color: var(--color-light-blue);
     border: none;
     color: #FFF;
     padding: 8px 32px;
     border-radius: 16px;
     font-size: 18px;
     font-weight: 700;
+}
+
+#post{
+    flex: 2.5;
+    background-color: var(--color-primary-dark-blue);
+}
+
+#header_post{
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+    border: 1px solid var(--color-primary-gray);
+    border-top: none;
+}
+
+#news_letter{
+    flex: 1;
 }
