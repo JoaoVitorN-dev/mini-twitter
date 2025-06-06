@@ -1,6 +1,7 @@
 :root {
     --color-primary-dark-blue: #17202A;
     --color-primary-gray: #656a6e;
+    --color-secondary-gray: #8899A6;
     --color-primary-light-white: #e7e9ea;
     --color-light-blue: #1DA1F2;
     --border-post: 1px solid var(--color-primary-gray);
@@ -147,11 +148,13 @@ span:hover {
     font-weight: 700;
 }
 
-#tweet:hover{
+#tweet:hover {
     cursor: pointer;
 }
 
 #post {
+    overflow: hidden;
+    overflow-y: scroll;
     flex: 2.5;
     background-color: var(--color-primary-dark-blue);
 }
@@ -176,7 +179,9 @@ span:hover {
     gap: 12px;
 }
 
-.text-tweet>img {
+.radius-img {
+    height: 48px;
+    width: 48px;
     border-radius: 24px;
 }
 
@@ -194,18 +199,105 @@ span:hover {
     font-size: 18px;
 }
 
-.icons-tweet{
+.icons-tweet {
     margin-top: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.icons-tweet > .icons{
+.icons-tweet>.icons {
     display: flex;
     align-items: center;
     gap: 16px;
     margin-left: 7.5%;
+}
+
+.icons-tweet>.icons > img, i{
+    cursor: pointer;
+}
+
+.latest_tweets{
+    height: 74vh;
+}
+
+.latest_tweets> .tweet{
+    padding: 12px;
+    border: var(--border-post);
+    border-top: none;
+}
+
+.latest_tweets> .tweet >.header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.informations {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.informations>.post_description {
+    color: var(--color-primary-light-white);
+}
+
+.user_informations {
+    display: flex;
+    gap: 8px;
+}
+
+.user_informations>#name {
+    color: var(--color-primary-light-white);
+    font-weight: 600;
+}
+
+.user_informations>#nickname {
+    color: var(--color-primary-gray);
+}
+
+
+.img-informations {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.image-legends {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.image-legends>img {
+    max-height: 300px;
+    min-width: 609px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid var(--color-secondary-gray);
+}
+
+.icons-posts {
+    display: flex;
+    gap: 40px;
+}
+
+.icons-posts>.post-social-icons {
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+    color: var(--color-secondary-gray);
+    gap: 8px;
+}
+
+.icons-posts>.post-social-icons, .show-thread:hover{
+    cursor: pointer;
+}
+
+.image-legends > .show-thread{
+    font-size: 14px;
+    color: var(--color-light-blue);
 }
 
 #news_letter {
