@@ -118,7 +118,7 @@
             </div>
         </div>
 
-        <div class="latest_tweets">
+        <div class="latest_tweets" id="container-tweet">
             <div class="tweet">
                 <div class="header">
                     <img class="radius-img" src="./assets/images/profilePicture.png" alt="">
@@ -262,6 +262,13 @@
             </div>
         </div>
     </aside>
+
+    <script src="./js/controllers/PostController.js"></script>
+    <script src="./js/repositories/PostRepository.js"></script>
+    <script src="./js/views/PostView.js"></script>
+    <script>
+        new PostController();
+    </script>
 </body>
 
 </html>
