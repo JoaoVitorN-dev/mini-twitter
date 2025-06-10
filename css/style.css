@@ -49,13 +49,13 @@ body {
     font-weight: 500;
 }
 
-.loginField {
+.loginField > .login-form {
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 
-.cardLogin>.loginField>input {
+.cardLogin > .loginField > .login-form> input {
     background-color: #000;
     border: 2px solid #131415;
     height: 50px;
@@ -66,11 +66,11 @@ body {
     font-size: 16px;
 }
 
-.cardLogin>.loginField>input::placeholder {
+.cardLogin>.loginField> .login-form> input::placeholder {
     color: var(--color-primary-gray);
 }
 
-.cardLogin>.loginField>button {
+.cardLogin>.loginField> .login-form >button {
     height: 50px;
     border-radius: 24px;
     border: none;
@@ -247,6 +247,7 @@ span:hover {
 .user_informations {
     display: flex;
     gap: 8px;
+    color: var(--color-primary-gray);
 }
 
 .user_informations>#name {
@@ -261,7 +262,7 @@ span:hover {
 
 .img-informations {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     margin-top: 12px;
 }
 
