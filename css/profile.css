@@ -1,0 +1,469 @@
+/*
+ * Estilos do perfil do mini-twitter
+ * Comentários explicativos para facilitar a leitura e manutenção
+ */
+
+/* === Reset e fonte base === */
+body {
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #15202B; /* Fundo escuro padrão X */
+    color: #FFFFFF;
+}
+
+/* === Sidebar Esquerda === */
+#sidebar {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: var(--color-primary-dark-blue); /* Azul escuro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+#side_content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+#side_items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.side-item {
+    margin-bottom: 30px; /* Espaço entre itens do menu */
+    display: flex;
+    align-items: center;
+}
+.side-item a {
+    text-decoration: none;
+    color: var(--color-primary-light-white);
+    display: flex;
+    align-items: center;
+}
+.side-item i {
+    margin-right: 10px;
+}
+.item-description {
+    font-size: 18px;
+}
+
+/* === Sidebar Direita === */
+#sidebar-right {
+    width: 250px;
+    background-color: #15202B;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: #FFFFFF;
+    overflow-y: auto;
+    max-height: 100vh;
+}
+#sidebar-right #side_content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#sidebar-right #side_items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#sidebar-right .side-item {
+    margin-bottom: 20px;
+}
+#sidebar-right .side-item a {
+    text-decoration: none;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* === Área principal do perfil === */
+main#profile {
+    margin-left: 250px;
+    margin-right: 250px;
+    padding: 20px;
+    width: calc(100% - 500px);
+}
+#profile-header {
+    position: relative;
+    margin-bottom: 20px;
+}
+.cover-photo {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+.profile-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.personal-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 10px;
+}
+#name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+#nickname {
+    font-size: 18px;
+    color: #8899A6;
+    margin-bottom: 10px;
+}
+#bio {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.profile-stats {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+/* === Tweets === */
+#user-tweets {
+    margin-top: 20px;
+}
+.tweet {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #2F3336;
+    padding: 0;
+    margin: 0 0 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.tweet .header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 0;
+}
+.tweet .radius-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-top: 0;
+}
+.tweet .informations {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.tweet .user_informations {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    margin-bottom: 0;
+}
+.tweet .user_informations #name {
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+    font-size: 16px;
+}
+.tweet .user_informations #nickname {
+    color: #8899A6;
+    font-size: 15px;
+    margin: 0;
+}
+.tweet .post-time {
+    color: #8899A6;
+    font-size: 14px;
+    margin-left: 4px;
+}
+.tweet .post_description {
+    color: #fff;
+    font-size: 16px;
+    margin: 0 0 6px 0;
+}
+
+/* === Imagem e área de informações do tweet === */
+.img-informations {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 0 0 58px; /* Deixa a imagem alinhada ao texto do tweet */
+    border-radius: 12px;
+    overflow: visible;
+    width: unset;
+    padding: 0;
+}
+.img-informations .image-legends {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+}
+.img-informations img {
+    display: block;
+    width: 500px;
+    max-width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #2F3336;
+    background: #222;
+    margin-bottom: 0;
+}
+@media (max-width: 700px) {
+    .img-informations {
+        margin-left: 48px !important;
+    }
+    .img-informations img {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+/* === Ícones sociais dos tweets === */
+.icons-posts {
+    display: flex;
+    align-items: center;
+    gap: 18px; /* Ícones mais próximos, visual X */
+    margin: 4px 0 0 0 !important;
+    color: #8899A6;
+    font-size: 16px;
+}
+.post-social-icons {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Ícone e número juntos */
+    font-size: 16px;
+    cursor: pointer;
+    color: #8899A6;
+    transition: color 0.2s, background 0.2s;
+    border-radius: 50px;
+    padding: 4px 6px 4px 4px;
+}
+.post-social-icons i {
+    font-size: 18px;
+    margin-right: 2px;
+}
+.post-social-icons:hover {
+    background: rgba(29,161,242,0.1);
+    color: #1DA1F2;
+}
+.post-social-icons:active {
+    background: rgba(29,161,242,0.2);
+}
+.post-social-icons figcaption {
+    font-size: 15px;
+    color: #8899A6;
+    font-weight: 400;
+    margin-left: 2px;
+}
+.post-social-icons:hover figcaption {
+    color: #1DA1F2;
+}
+
+/* === Texto "Show this thread" === */
+.show-thread {
+    color: #1DA1F2;
+    font-size: 15px;
+    margin-left: 0 !important;
+    padding-left: 0;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* === Remove h2 dos tweets (acessibilidade visual) === */
+#user-tweets h2 {
+    display: none;
+}
+
+/* === Barra de busca (Buscar no X) === */
+#search-bar {
+    background-color: #202327;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    padding: 8px 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+    border: 1px solid #38444D;
+}
+#search-bar i {
+    color: #8899A6;
+    margin-right: 10px;
+    font-size: 18px;
+}
+#search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 8px 0;
+    border-radius: 30px;
+    font-size: 15px;
+    background-color: transparent;
+    color: #fff;
+    margin-left: 0;
+}
+#search-input::placeholder {
+    color: #8899A6;
+    opacity: 1;
+    font-size: 15px;
+}
+
+/* === Responsividade === */
+@media (max-width: 768px) {
+    #sidebar,
+    #sidebar-right {
+        width: 200px;
+    }
+    main#profile {
+        margin-left: 200px;
+        margin-right: 200px;
+        width: calc(100% - 400px);
+    }
+    #profile-tabs {
+        flex-direction: column;
+    }
+    #profile-tabs ul {
+        flex-direction: column;
+    }
+    #profile-tabs li {
+        padding: 8px 16px;
+        font-size: 14px;
+        height: 45px;
+    }
+    #search-bar {
+        padding: 6px 10px;
+    }
+    #search-input {
+        font-size: 13px;
+    }
+    .tweet .post_description {
+        font-size: 12px;
+    }
+    .tweet .user_informations #nickname {
+        font-size: 12px;
+    }
+    .tweet .user_informations #name {
+        font-size: 16px;
+    }
+    .tweet .header img {
+        height: 40px;
+        width: 40px;
+        margin-right: 8px;
+    }
+    .tweet {
+        padding: 10px;
+        font-size: 18px;
+    }
+    #user-tweets h2 {
+        font-size: 14px;
+    }
+    .profile-stats span {
+        font-size: 14px;
+    }
+    #bio {
+        font-size: 14px;
+    }
+    #nickname {
+        font-size: 16px;
+    }
+    #name {
+        font-size: 20px;
+    }
+    .profile-photo {
+        height: 80px;
+        width: 80px;
+    }
+    .cover-photo {
+        height: 150px;
+    }
+}
+
+#profile-header .personal-details p {
+    letter-spacing: 0.5px;
+}
+
+/* === Tabs de navegação do perfil === */
+#profile-tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    border-bottom: 1px solid #2F3336;
+}
+#profile-tabs ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#profile-tabs li {
+    cursor: pointer;
+    color: #8899A6;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+#profile-tabs .active {
+    color: #1DA1F2;
+    border-bottom: 2px solid #1DA1F2;
+}
+
+/* === Botão Edit Profile === */
+#edit-profile {
+    background-color: #1DA1F2;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#edit-profile:hover {
+    background-color: #0d8dd9;
+}
+
+/* === Show More Link === */
+#show-more {
+    display: block;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 10px auto;
+    background-color: #1DA1F2;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#show-more:hover {
+    background-color: #0d8dd9;
+}
