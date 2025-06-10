@@ -13,6 +13,7 @@ class PostView {
                         <div class="user_informations">
                             <p id="name">${post.author.username}</p>
                             <p id="nickname">@${post.author.username}</p>
+                            <p>${new Date(post.createdAt).toLocaleString("pt-br")}</p>
                         </div>
                         <p class="post_description">${post.content}</p>
                     </div>
