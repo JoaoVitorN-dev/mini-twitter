@@ -12,22 +12,26 @@
     font-family: 'Rubik';
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
+
 
 body {
     display: flex;
+    height: 100vh;
+    overflow: hidden; /* Impede o scroll na página inteira */
+    background-color: var(--color-primary-dark-blue);
 }
 
 .container {
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     background-color: #000;
 }
-
 
 .twitterLogo>img {
     height: 80px;
@@ -36,26 +40,22 @@ body {
 
 .cardLogin {
     width: 420px;
+    max-width: 90%;
 }
-
-.container>.cardLogin>h1 {
+.container .cardLogin h1 {
     color: var(--color-primary-light-white);
     margin-top: 20px;
-}
-
-
-.container>.cardLogin>h1 {
     font-size: 34px;
     font-weight: 500;
 }
 
-.loginField > .login-form {
+.loginField .login-form {
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 
-.cardLogin > .loginField > .login-form> input {
+.cardLogin .loginField .login-form input {
     background-color: #000;
     border: 2px solid #131415;
     height: 50px;
@@ -66,11 +66,11 @@ body {
     font-size: 16px;
 }
 
-.cardLogin>.loginField> .login-form> input::placeholder {
+.cardLogin .loginField .login-form input::placeholder {
     color: var(--color-primary-gray);
 }
 
-.cardLogin>.loginField> .login-form >button {
+.cardLogin .loginField .login-form button {
     height: 50px;
     border-radius: 24px;
     border: none;
@@ -89,13 +89,13 @@ span:hover {
     background-color: #d5d9da;
 }
 
-.cardLogin>p {
+.cardLogin p {
     color: var(--color-primary-gray);
     text-align: center;
     margin-top: 32px;
 }
 
-.cardLogin>p>span {
+.cardLogin p span {
     color: var(--color-primary-light-white);
 }
 
@@ -105,8 +105,8 @@ span:hover {
 
 #sidebar {
     background-color: var(--color-primary-dark-blue);
-    height: 100vh;
     flex: 1;
+    overflow-y: auto; 
 }
 
 #side_content {
@@ -154,24 +154,35 @@ span:hover {
 }
 
 #post {
-    overflow: hidden;
-    overflow-y: scroll;
     flex: 2.5;
     background-color: var(--color-primary-dark-blue);
+    border-left: var(--border-post);
+    border-right: var(--border-post);
+    overflow-y: scroll; 
 }
+
+#post::-webkit-scrollbar {
+    width: 8px;
+}
+#post::-webkit-scrollbar-track {
+    background: var(--color-primary-dark-blue);
+}
+#post::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary-gray);
+    border-radius: 20px;
+}
+
 
 #header_post {
     display: flex;
     justify-content: space-between;
     padding: 2%;
-    border: 1px solid var(--color-primary-gray);
-    border-top: none;
+    border-bottom: 1px solid var(--color-primary-gray);
 }
 
 .new-tweet {
     padding: 18px;
-    border: var(--border-post);
-    border-top: none;
+    border-bottom: var(--border-post);
 }
 
 .text-tweet {
@@ -214,21 +225,21 @@ span:hover {
     margin-left: 7.5%;
 }
 
-.icons-tweet>.icons > img, i{
+.icons-tweet>.icons>img,
+i {
     cursor: pointer;
 }
 
-.latest_tweets{
-    height: 74vh;
+.latest_tweets {
+   
 }
 
-.latest_tweets> .tweet{
+.latest_tweets>.tweet {
     padding: 12px;
-    border: var(--border-post);
-    border-top: none;
+    border-bottom: var(--border-post);
 }
 
-.latest_tweets> .tweet >.header {
+.latest_tweets>.tweet>.header {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -240,7 +251,7 @@ span:hover {
     gap: 2px;
 }
 
-.informations>.post_description {
+.informations .post_description {
     color: var(--color-primary-light-white);
 }
 
@@ -250,12 +261,12 @@ span:hover {
     color: var(--color-primary-gray);
 }
 
-.user_informations>#name {
+.user_informations #name {
     color: var(--color-primary-light-white);
     font-weight: 600;
 }
 
-.user_informations>#nickname {
+.user_informations #nickname {
     color: var(--color-primary-gray);
 }
 
@@ -274,7 +285,7 @@ span:hover {
 
 .image-legends>img {
     max-height: 300px;
-    min-width: 609px;
+    max-width: 100%;
     object-fit: cover;
     border-radius: 12px;
     border: 2px solid var(--color-secondary-gray);
@@ -283,6 +294,7 @@ span:hover {
 .icons-posts {
     display: flex;
     gap: 40px;
+    flex-wrap: wrap;
 }
 
 .icons-posts>.post-social-icons {
@@ -293,50 +305,48 @@ span:hover {
     gap: 8px;
 }
 
-.icons-posts>.post-social-icons, .show-thread:hover{
+.icons-posts>.post-social-icons,
+.show-thread:hover {
     cursor: pointer;
 }
 
-.image-legends > .show-thread{
+.image-legends>.show-thread {
     font-size: 14px;
     color: var(--color-light-blue);
 }
 
 #news_letter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     flex: 1;
     background-color: var(--color-primary-dark-blue);
     padding: 20px;
+    overflow-y: auto; 
 }
 
-.whats-happening-card{
+.whats-happening-card {
     border-radius: 8px;
     background-color: var(--color-secondary-dark-blue);
+    width: 100%;
 }
 
-.whats-happening-card > .title-card{
+.whats-happening-card>.title-card {
     padding: 8px 12px;
     border-bottom: 1px solid var(--color-primary-gray);
 }
 
-.whats-happening-card > .title-card > h2{
-    color: var(--color-primary-light-white);
-
-}
-
-.whats-happening-card > h2 {
+.whats-happening-card>.title-card>h2 {
     color: var(--color-primary-light-white);
 }
 
-.whats-happening-card > .notice{
+.whats-happening-card>h2 {
+    color: var(--color-primary-light-white);
+}
+
+.whats-happening-card>.notice {
     padding: 8px;
     border-bottom: var(--border-post);
 }
 
-.whats-happening-card  > .notice > .flags-notice{
+.whats-happening-card>.notice>.flags-notice {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -345,40 +355,138 @@ span:hover {
     color: var(--color-primary-gray);
 }
 
-.description-notice{
+.description-notice {
     margin-bottom: 8px;
     display: flex;
     align-items: center;
     gap: 4px;
 }
 
-.description-notice > p{
+.description-notice>p {
     color: var(--color-primary-light-white);
     font-weight: 500;
 }
 
-.description-notice > img{
+.description-notice>img {
     border-radius: 8px;
+    max-width: 80px;
 }
 
-.whats-happening-card > .footer-notice{
+.whats-happening-card>.footer-notice {
     border-bottom: var(--border-post);
 }
 
-.notice > .footer-notice > p{
+.notice>.footer-notice>p {
     font-size: 12px;
     color: var(--color-primary-gray);
 }
 
-.notice > .footer-notice > p > span{
+.notice>.footer-notice>p>span {
     color: var(--color-light-blue);
 }
 
-.whats-happening-card > .footer-card-notice{
+.whats-happening-card>.footer-card-notice {
     padding: 12px;
 }
 
-.whats-happening-card > .footer-card-notice > p{
+.whats-happening-card>.footer-card-notice>p {
     font-size: 14px;
     color: var(--color-light-blue)
+}
+
+#header-profile {
+    padding: 8px 20px;
+    border-bottom: var(--border-post);
+}
+
+#header-profile .name-profile {
+    color: var(--color-primary-light-white);
+    font-size: 18px;
+}
+
+#header-profile p {
+    color: var(--color-primary-gray);
+}
+
+.profile-content{
+    border-bottom: none;
+}
+
+.image-profile-background {
+    background-image: url("../assets/images/astronauta.jpg");
+    height: 230px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.img-profile-content {
+    position: absolute;
+    bottom: -58px;
+    left: 2% ;
+}
+
+.img-profile-content>img {
+    border-radius: 50%;
+    border: 4px solid #0F1419;
+}
+
+.names-edit{
+    margin-top: 6%;
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.names-profile h1{
+    color: var(--color-primary-light-white);
+}
+
+.names-profile p{
+    color: var(--color-primary-gray);
+}
+
+.btn-edit button{
+    background-color: var(--color-light-blue);
+    border: none;
+    color: #FFF;
+    padding: 8px 32px;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.btn-edit button:hover{
+    cursor: pointer;
+}
+
+.position-profile{
+    padding: 0px 16px;
+}
+
+.position-profile p{
+    color: var(--color-primary-light-white);
+}
+
+#profile-tabs{
+    border-bottom: var(--border-post);
+}
+
+#profile-tabs ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    padding: 16px 0;
+}
+
+#profile-tabs ul li{
+    color: var(--color-primary-gray);
+    font-weight: 600;
+    padding: 0 8px;
+}
+
+#profile-tabs ul li:hover{
+    cursor: pointer;
+    color: var(--color-primary-light-white);
 }

@@ -75,9 +75,9 @@
                 </li>
 
                 <li class="side-item">
-                    <a href="profile.html">
+                    <a href="#">
                         <i class="fa-solid fa-user fa-lg"></i>
-                        <span class="item-description">
+                        <span class="item-description" id="item-profile">
                             Profile
                         </span>
                     </a>
@@ -97,6 +97,83 @@
     </nav>
 
     <main id="post">
+        <!-- <div class="disable" id="profile-preview">
+            <header id="header-profile">
+                <h2 class="name-profile">Name do perfil</h2>
+                <p>Tweets</p>
+            </header>
+            <div class="profile-content">
+                <div class="image-profile-background">
+                    <div class="img-profile-content">
+                        <img src="./assets/images/photoProfile.png" alt="">
+                    </div>
+                </div>
+                <div class="names-edit">
+                    <div class="names-profile">
+                        <h1>Name do perfil</h1>
+                        <p>@perfil</p>
+                    </div>
+                    <div class="btn-edit">
+                        <button>Edit profile</button>
+                    </div>
+                </div>
+
+                <div class="position-profile">
+                    <p>Developer</p>
+                </div>
+            </div>
+            <nav id="profile-tabs">
+                <ul>
+                    <li class="active">Tweets</li>
+                    <li>Tweets & replies</li>
+                    <li>Media</li>
+                    <li>Likes</li>
+                </ul>
+            </nav>
+
+            <div class="latest_tweets" id="container-tweet">
+                <div class="tweet">
+                    <div class="header">
+                        <img class="radius-img" src="./assets/images/profilePicture.png" alt="">
+                        <div class="informations">
+                            <div class="user_informations">
+                                <p id="name">Devon Lane</p>
+                                <p id="nickname">@marcelosalomao</p>
+                            </div>
+                            <p class="post_description">Is this big enough for you?</p>
+                        </div>
+                    </div>
+                    <div class="img-informations">
+                        <div class="image-legends">
+                            <img src="./assets/images/astronauta.jpg" alt="">
+                            <div class="icons-posts">
+                                <figure class="post-social-icons">
+                                    <i class="fa-regular fa-comment fa-flip-horizontal fa-lg"
+                                        style="color: #8899A6;"></i>
+                                    <figcaption>61</figcaption>
+                                </figure>
+
+                                <figure class="post-social-icons">
+                                    <i class="fa-solid fa-retweet fa-lg" style="color: #8899A6;"></i>
+                                    <figcaption>12</figcaption>
+                                </figure>
+
+                                <figure class="post-social-icons">
+                                    <i class="fa-solid fa-heart fa-lg" style="color: #8899A6;"></i>
+                                    <figcaption>6.2K</figcaption>
+                                </figure>
+
+                                <figure class="post-social-icons">
+                                    <i class="fa-solid fa-arrow-up-from-bracket fa-lg" style="color: #8899A6;"></i>
+                                    <figcaption>73</figcaption>
+                                </figure>
+                            </div>
+                            <p class="show-thread">Show this thread</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
         <header id="header_post">
             <p class="item-description">Home</p>
             <img src="./assets/icons/sparkles.svg" alt="">
@@ -265,9 +342,15 @@
     <script src="./js/controllers/PostController.js"></script>
     <script src="./js/repositories/PostRepository.js"></script>
     <script src="./js/views/PostView.js"></script>
+    <script src="./js/controllers/ProfileController.js"></script>
+    <script src="./js/repositories/ProfileRepository.js"></script>
+    <script src="./js/views/ProfileView.js"></script>
     <script>
         new PostController();
-    </script> 
+    </script>
+    <script>
+        new ProfileController();
+    </script>
 </body>
 
 </html>
