@@ -1,11 +1,11 @@
 class PostView {
     constructor(data) {
-        this.data=data;
+        this.data = data;
     }
 
     render() {
 
-        return this.data.map(post=>`
+        return this.data.map(post => `
              <div class="tweet">
                 <div class="header">
                     <img class="radius-img" src="./assets/images/profilePicture.png" alt="">
@@ -46,7 +46,5 @@ class PostView {
                 </div>
             </div>
             `).join('');
-       
-
     }
 }

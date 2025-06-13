@@ -95,15 +95,14 @@ class ProfileView {
     `).join('');
     }
 
-    renderEditProfile(){
+    renderEditProfile() {
         return `
-            <div class="twitterLogo"><img src="./assets/icons/logo.svg" alt=""></div>
-            <h1>Atualize sua conta</h1>
+            <h1 class="title-update"> <i class="fa-solid fa-pencil fa-sm" style="color: #e7e9ea;"></i> Atualize sua conta</h1>
             <div class="loginField">
                 <form class="login-form" id="register-form">
-                    <input type="text" placeholder="Digite seu Nome" id="name">
-                    <input type="email" placeholder="Digite seu Email" id="email">
-                    <button type="submit"">Editar</button>
+                    <input type="text" placeholder="Digite seu novo Nome" id="name" class="input-update">
+                    <input type="email" placeholder="Digite seu novo Email" id="email" class="input-update">
+                    <button type="submit"" class="btn-update">Atualizar</button>
                 </form>
             </div>
         `

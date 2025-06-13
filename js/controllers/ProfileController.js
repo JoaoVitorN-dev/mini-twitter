@@ -2,11 +2,13 @@ class ProfileController {
     constructor() {
         this.repository = new ProfileRepository();
         this.container = document.querySelector("#post");
+        this.loading = new LoadingSpinner();
         this.init();
     }
 
     async init() {
         document.querySelector("#item-profile").addEventListener("click", async () => {
+            this.container.innerHTML = this.loading.showLoading();
             const dataProfile = await this.repository.getMyProfile();
             const dataPost = await this.repository.getMyPosts();
             const view = new ProfileView(dataPost, dataProfile);
@@ -25,21 +27,27 @@ class ProfileController {
         });
     }
 
-    handleUpdateUser(){
-        document.querySelector("#register-form").addEventListener("submit", async() => {
+    handleUpdateUser() {
+        document.querySelector("#register-form").addEventListener("submit", async () => {
             const name = document.querySelector("#name").value;
             const email = document.querySelector("#email").value;
-            try {
-                const result = await this.repository.updateUser(name,email);
-                if(result.message){
-                    alert(result.message);
-                    this.init();
-                }else{
-                    alert("Não foi possível atualizar o perfil!");
+            if (name && email) {
+                try {
+                    const result = await this.repository.updateUser(name, email);
+                    if (result.message) {
+                        alert(result.message);
+                        this.init();
+                    } else {
+                        alert("Não foi possível atualizar o perfil!");
+                    }
+                } catch (error) {
+                    console.log("Erro ao atualizar o perfil ", error);
                 }
-            } catch (error) {
-                console.log("Erro ao atualizar o perfil ",error);
+            } else {
+                alert("Preencha todos os campos para atualizar o perfil!");
             }
+
         })
     }
+
 }

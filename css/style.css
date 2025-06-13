@@ -19,7 +19,7 @@
 body {
     display: flex;
     height: 100vh;
-    overflow: hidden; /* Impede o scroll na página inteira */
+    overflow: hidden;
     background-color: var(--color-primary-dark-blue);
 }
 
@@ -42,6 +42,7 @@ body {
     width: 420px;
     max-width: 90%;
 }
+
 .container .cardLogin h1 {
     color: var(--color-primary-light-white);
     margin-top: 20px;
@@ -70,7 +71,8 @@ body {
     color: var(--color-primary-gray);
 }
 
-.cardLogin .loginField .login-form button {
+.cardLogin .loginField .login-form button,
+.btn-update {
     height: 50px;
     border-radius: 24px;
     border: none;
@@ -106,7 +108,7 @@ span:hover {
 #sidebar {
     background-color: var(--color-primary-dark-blue);
     flex: 1;
-    overflow-y: auto; 
+    overflow-y: auto;
 }
 
 #side_content {
@@ -158,15 +160,17 @@ span:hover {
     background-color: var(--color-primary-dark-blue);
     border-left: var(--border-post);
     border-right: var(--border-post);
-    overflow-y: scroll; 
+    overflow-y: scroll;
 }
 
 #post::-webkit-scrollbar {
     width: 8px;
 }
+
 #post::-webkit-scrollbar-track {
     background: var(--color-primary-dark-blue);
 }
+
 #post::-webkit-scrollbar-thumb {
     background-color: var(--color-primary-gray);
     border-radius: 20px;
@@ -231,7 +235,7 @@ i {
 }
 
 .latest_tweets {
-   
+    height: 70%;
 }
 
 .latest_tweets>.tweet {
@@ -319,7 +323,7 @@ i {
     flex: 1;
     background-color: var(--color-primary-dark-blue);
     padding: 20px;
-    overflow-y: auto; 
+    overflow-y: auto;
 }
 
 .whats-happening-card {
@@ -408,7 +412,7 @@ i {
     color: var(--color-primary-gray);
 }
 
-.profile-content{
+.profile-content {
     border-bottom: none;
 }
 
@@ -423,7 +427,7 @@ i {
 .img-profile-content {
     position: absolute;
     bottom: -58px;
-    left: 2% ;
+    left: 2%;
 }
 
 .img-profile-content>img {
@@ -431,7 +435,7 @@ i {
     border: 4px solid #0F1419;
 }
 
-.names-edit{
+.names-edit {
     margin-top: 6%;
     display: flex;
     padding: 16px;
@@ -439,15 +443,15 @@ i {
     justify-content: space-between;
 }
 
-.names-profile h1{
+.names-profile h1 {
     color: var(--color-primary-light-white);
 }
 
-.names-profile p{
+.names-profile p {
     color: var(--color-primary-gray);
 }
 
-.btn-edit button{
+.btn-edit button {
     background-color: var(--color-light-blue);
     border: none;
     color: #FFF;
@@ -457,36 +461,73 @@ i {
     font-weight: 700;
 }
 
-.btn-edit button:hover{
+.btn-edit button:hover {
     cursor: pointer;
 }
 
-.position-profile{
+.position-profile {
     padding: 0px 16px;
 }
 
-.position-profile p{
+.position-profile p {
     color: var(--color-primary-light-white);
 }
 
-#profile-tabs{
+#profile-tabs {
     border-bottom: var(--border-post);
 }
 
-#profile-tabs ul{
+#profile-tabs ul {
     display: flex;
     list-style: none;
     justify-content: space-around;
     padding: 16px 0;
 }
 
-#profile-tabs ul li{
+#profile-tabs ul li {
     color: var(--color-primary-gray);
     font-weight: 600;
     padding: 0 8px;
 }
 
-#profile-tabs ul li:hover{
+#profile-tabs ul li:hover {
     cursor: pointer;
     color: var(--color-primary-light-white);
+}
+
+.title-update {
+    color: var(--color-primary-light-white);
+    text-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 10%;
+}
+
+.input-update {
+    background-color: #283340;
+    width: 60%;
+    height: 50px;
+    border: var(--border-post);
+    outline: none;
+    border-radius: 16px;
+    color: #d1d3d4;
+    padding: 0px 16px;
+    margin: 0px auto;
+    font-size: 16px;
+}
+
+.btn-update {
+    height: 50px;
+    width: 15%;
+    margin: 0px auto;
+    border-radius: 24px;
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: #eff3f4;
+    transition: background-color 0.3s;
+}
+
+.btn-update:hover {
+    cursor: pointer;
 }
