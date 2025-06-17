@@ -12,6 +12,7 @@ class PostController {
         const view = new PostView(data);
         this.container.innerHTML = view.render();
         this.createPost();
+        this.likePost();
     }
 
     createPost() {
@@ -35,6 +36,27 @@ class PostController {
             } else {
                 alert("É necessário preencher o campo de postagem!")
             }
+        })
+    }
+
+
+    likePost() {
+        const iconLike = document.querySelectorAll("#icon-like");
+        iconLike.forEach(element => {
+            element.addEventListener("click", () => {
+               const container = element.closest(".post-social-icons");
+               const totalLikes = container.querySelector(".total-likes");
+               let likeCount = parseInt(totalLikes.innerHTML);
+               element.classList.toggle("liked");
+               if(element.classList.contains("liked")){
+                likeCount++;
+               }else{
+                likeCount--;
+               }
+               totalLikes.innerHTML = likeCount;
+
+            });
+
         })
     }
 }

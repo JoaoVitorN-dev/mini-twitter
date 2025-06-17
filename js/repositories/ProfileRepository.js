@@ -1,7 +1,7 @@
 class ProfileRepository {
     constructor() {
         this.baseUrl = 'https://mini-twitter-api-vy9q.onrender.com/';
-        this.token =localStorage.getItem("authToken");
+        this.token = localStorage.getItem("authToken");
     }
 
     getAction(endpoint) {
@@ -36,22 +36,21 @@ class ProfileRepository {
         })
     }
 
-    updateUser(username,email) {
-        return new Promise(async (resolve, reject) => {
-            const postContent = {
-                username: username,
-                email: email
-            }
-            const request = await fetch(this.getAction("api/users/profile"), {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${this.token}`
-                },
-                body: JSON.stringify(postContent),
-            });
-            const json = await request.json();
-            resolve(json);
-        })
+    async updateUser(username, email) {
+        const tokenUrl = localStorage.getItem("authToken");
+        const postContent = {
+            username: username,
+            email: email
+        }
+        const request = await fetch(this.getAction("api/users/profile"), {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${tokenUrl}`
+            },
+            body: JSON.stringify(postContent),
+        });
+        const json = await request.json();
+        return json;
     }
 }

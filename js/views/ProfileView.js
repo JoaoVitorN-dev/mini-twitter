@@ -79,8 +79,8 @@ class ProfileView {
                         </figure>
 
                         <figure class="post-social-icons">
-                            <i class="fa-solid fa-heart fa-lg" style="color: #8899A6;"></i>
-                            <figcaption>6.2K</figcaption>
+                            <i class="fa-solid fa-heart fa-lg" id="icon-like"></i>
+                            <figcaption class="total-likes">0</figcaption>
                         </figure>
 
                         <figure class="post-social-icons">

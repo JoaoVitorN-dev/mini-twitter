@@ -9,6 +9,10 @@ class ProfileController {
     async init() {
         document.querySelector("#item-profile").addEventListener("click", async () => {
             this.container.innerHTML = this.loading.showLoading();
+            document.querySelector("#icon-home").classList.remove("active");
+            document.querySelector("#item-home").classList.remove("active");
+            document.querySelector("#profile-desc").classList.add("active");
+            document.querySelector("#icon-profile").classList.add("active");
             const dataProfile = await this.repository.getMyProfile();
             const dataPost = await this.repository.getMyPosts();
             const view = new ProfileView(dataPost, dataProfile);
@@ -16,6 +20,7 @@ class ProfileController {
             const renderPosts = document.querySelector("#container-tweet");
             renderPosts.innerHTML = view.renderMyPosts();
             this.showUpdateForm();
+            this.likePost();
         });
     }
 
@@ -36,7 +41,6 @@ class ProfileController {
                     const result = await this.repository.updateUser(name, email);
                     if (result.message) {
                         alert(result.message);
-                        this.init();
                     } else {
                         alert("Não foi possível atualizar o perfil!");
                     }
@@ -47,6 +51,24 @@ class ProfileController {
                 alert("Preencha todos os campos para atualizar o perfil!");
             }
 
+        })
+    }
+
+    likePost() {
+        const iconLike = document.querySelectorAll("#icon-like");
+        iconLike.forEach(element => {
+            element.addEventListener("click", () => {
+                const container = element.closest(".post-social-icons");
+                const totalLikes = container.querySelector(".total-likes");
+                let likeCount = parseInt(totalLikes.innerHTML);
+                element.classList.toggle("liked");
+                if (element.classList.contains("liked")) {
+                    likeCount++;
+                } else {
+                    likeCount--;
+                }
+                totalLikes.innerHTML = likeCount;
+            });
         })
     }
 
